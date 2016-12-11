@@ -2,7 +2,7 @@ package com.vise.utils.character;
 
 import android.text.TextUtils;
 
-import com.vise.common_utils.assist.Check;
+import com.vise.utils.assist.Check;
 
 import org.json.JSONArray;
 import org.json.JSONException;

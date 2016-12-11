@@ -1,7 +1,7 @@
 package com.vise.utils.data.cipher;
 
 
-import com.vise.common_utils.assist.Base64;
+import com.vise.utils.assist.Base64;
 
 public class Base64Cipher extends Cipher {
     private Cipher cipher;

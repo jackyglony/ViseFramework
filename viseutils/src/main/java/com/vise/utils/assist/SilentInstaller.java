@@ -5,7 +5,7 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.util.Log;
 
-import com.vise.common_utils.utils.character.ShellUtil;
+import com.vise.utils.character.ShellUtil;
 
 import java.io.File;
 
@@ -106,7 +106,7 @@ public class SilentInstaller {
     /**
      * Installation return code<br/>
      * the new package failed because it has specified that it is a test-only package and the caller has not supplied
-     * the {@link #INSTALL_ALLOW_TEST} flag.
+     * the {#INSTALL_ALLOW_TEST} flag.
      */
     public static final int INSTALL_FAILED_TEST_ONLY = -15;
 

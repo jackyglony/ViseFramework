@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 
-import com.vise.common_utils.assist.Check;
+import com.vise.utils.assist.Check;
 import com.vise.log.ViseLog;
 
 /**

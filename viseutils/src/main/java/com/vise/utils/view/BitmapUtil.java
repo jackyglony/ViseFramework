@@ -16,7 +16,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
 
-import com.vise.common_utils.assist.Base64;
+import com.vise.utils.assist.Base64;
 import com.vise.log.ViseLog;
 
 import java.io.ByteArrayOutputStream;

@@ -33,7 +33,7 @@ public class AndroidUtil {
     /**
      * 获取本地Ip地址
      *
-     * @param activity
+     * @param context
      * @return
      */
     public static String getLocalIpAddress(Context context) {

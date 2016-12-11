@@ -13,9 +13,9 @@ import android.net.Uri;
 import android.os.Build;
 import android.provider.Settings;
 
-import com.vise.common_utils.assist.Check;
+import com.vise.utils.assist.Check;
 import com.vise.log.ViseLog;
-import com.vise.common_utils.utils.character.ShellUtil;
+import com.vise.utils.character.ShellUtil;
 
 import java.io.File;
 import java.util.List;

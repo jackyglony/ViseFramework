@@ -11,7 +11,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.telephony.TelephonyManager;
 
-import com.vise.common_utils.utils.view.ViewUtil;
+import com.vise.utils.view.ViewUtil;
 
 import java.util.List;
 

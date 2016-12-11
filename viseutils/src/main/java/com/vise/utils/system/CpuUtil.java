@@ -1,8 +1,8 @@
 package com.vise.utils.system;
 
-import com.vise.common_utils.assist.Check;
+import com.vise.utils.assist.Check;
 import com.vise.log.ViseLog;
-import com.vise.common_utils.utils.file.FileUtil;
+import com.vise.utils.file.FileUtil;
 
 import java.io.BufferedReader;
 import java.io.File;

@@ -7,7 +7,7 @@ import android.os.Build;
 import android.text.format.Formatter;
 
 import com.vise.log.ViseLog;
-import com.vise.common_utils.utils.file.FileUtil;
+import com.vise.utils.file.FileUtil;
 
 /**
  * Get memory info.

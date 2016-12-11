@@ -17,8 +17,8 @@
 package com.vise.utils.io;
 
 import android.os.Build;
-import com.vise.common_utils.io.stream.*;
-import com.vise.common_utils.io.stream.ByteArrayOutputStream;
+import com.vise.utils.io.stream.*;
+import com.vise.utils.io.stream.ByteArrayOutputStream;
 
 import java.io.*;
 import java.net.*;
@@ -448,7 +448,7 @@ public class IOUtils {
      * Use this method instead of <code>toByteArray(InputStream)</code>
      * when <code>InputStream</code> size is known.
      * <b>NOTE:</b> the method checks that the length can safely be cast to an int without truncation
-     * before using {@link com.vise.common_utils.io.IOUtils#toByteArray(InputStream, int)} to read into the byte array.
+     * before using {@link com.vise.utils.io.IOUtils#toByteArray(InputStream, int)} to read into the byte array.
      * (Arrays can have no more than Integer.MAX_VALUE entries anyway)
      *
      * @param input the <code>InputStream</code> to read from
@@ -456,7 +456,7 @@ public class IOUtils {
      * @return the requested byte array
      * @throws IOException      if an I/O error occurs or <code>InputStream</code> size differ from parameter size
      * @throws IllegalArgumentException if size is less than zero or size is greater than Integer.MAX_VALUE
-     * @see com.vise.common_utils.io.IOUtils#toByteArray(InputStream, int)
+     * @see com.vise.utils.io.IOUtils#toByteArray(InputStream, int)
      * @since 2.1
      */
     public static byte[] toByteArray(InputStream input, long size) throws IOException {

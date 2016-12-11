@@ -3,10 +3,10 @@ package com.vise.utils.data;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.vise.common_utils.data.cipher.Cipher;
 import com.vise.log.ViseLog;
-import com.vise.common_utils.utils.convert.ByteUtil;
-import com.vise.common_utils.utils.encrypt.HexUtil;
+import com.vise.utils.convert.ByteUtil;
+import com.vise.utils.data.cipher.Cipher;
+import com.vise.utils.encrypt.HexUtil;
 
 /**
  * 安全的持久化存储
