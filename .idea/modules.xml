@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ViseFramework.iml" filepath="$PROJECT_DIR$/ViseFramework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/viseble/viseble.iml" filepath="$PROJECT_DIR$/viseble/viseble.iml" />
+      <module fileurl="file://$PROJECT_DIR$/viselog/viselog.iml" filepath="$PROJECT_DIR$/viselog/viselog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/visetcp/visetcp.iml" filepath="$PROJECT_DIR$/visetcp/visetcp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/viseudp/viseudp.iml" filepath="$PROJECT_DIR$/viseudp/viseudp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/viseutils/viseutils.iml" filepath="$PROJECT_DIR$/viseutils/viseutils.iml" />
+    </modules>
+  </component>
+</project>
