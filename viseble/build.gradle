@@ -19,5 +19,5 @@ android {
 }
 
 dependencies {
-    compile project(':viselog')
+    compile 'com.vise.xiaoyaoyou:viselog:1.0.0'
 }
