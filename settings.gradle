@@ -1,4 +1,4 @@
-include ':app'
+include ':app', ':visebase'
 include ':viselog'
 include ':viseble'
 include ':viseudp'
