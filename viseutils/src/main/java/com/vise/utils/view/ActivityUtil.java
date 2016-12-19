@@ -34,7 +34,8 @@ public class ActivityUtil {
         }
     }
 
-    public static void startForwardActivity(Activity context, Class<?> forwardActivity, Bundle bundle, Boolean isFinish, int animIn, int animOut) {
+    public static void startForwardActivity(Activity context, Class<?> forwardActivity, Bundle bundle, Boolean
+            isFinish, int animIn, int animOut) {
         Intent intent = new Intent(context, forwardActivity);
         //intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         if (bundle != null)
@@ -50,7 +51,8 @@ public class ActivityUtil {
         }
     }
 
-    public static void startForwardActivity(Activity context, Class<?> forwardActivity, Bundle bundle, Boolean isFinish) {
+    public static void startForwardActivity(Activity context, Class<?> forwardActivity, Bundle bundle, Boolean
+            isFinish) {
         Intent intent = new Intent(context, forwardActivity);
         //intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         if (bundle != null)
@@ -61,7 +63,8 @@ public class ActivityUtil {
         }
     }
 
-    public static void startForResultActivity(Activity context, Class<?> forwardActivity, int requestCode, Bundle bundle, Boolean isFinish) {
+    public static void startForResultActivity(Activity context, Class<?> forwardActivity, int requestCode, Bundle
+            bundle, Boolean isFinish) {
         Intent intent = new Intent(context, forwardActivity);
         //intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         if (bundle != null)
@@ -72,7 +75,8 @@ public class ActivityUtil {
         }
     }
 
-    public static void startForResultActivity(Activity context, Class<?> forwardActivity, int requestCode, Bundle bundle, Boolean isFinish, int animIn, int animOut) {
+    public static void startForResultActivity(Activity context, Class<?> forwardActivity, int requestCode, Bundle
+            bundle, Boolean isFinish, int animIn, int animOut) {
         Intent intent = new Intent(context, forwardActivity);
         //intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         if (bundle != null)

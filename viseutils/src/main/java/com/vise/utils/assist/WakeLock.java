@@ -9,10 +9,9 @@ import com.vise.log.ViseLog;
 /**
  * <!-- 亮屏 -->
  * require <uses-permission android:name="android.permission.WAKE_LOCK"/>
- *
  */
 public class WakeLock {
-    PowerManager          powerManager;
+    PowerManager powerManager;
     PowerManager.WakeLock wakeLock;
 
     public WakeLock(Context context, String tag) {

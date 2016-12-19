@@ -9,10 +9,9 @@ import com.vise.log.ViseLog;
 /**
  * <!-- 解锁 -->
  * require <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
- *
  */
 public class KeyguardLock {
-    KeyguardManager              keyguardManager;
+    KeyguardManager keyguardManager;
     KeyguardManager.KeyguardLock keyguardLock;
 
     public KeyguardLock(Context context, String tag) {

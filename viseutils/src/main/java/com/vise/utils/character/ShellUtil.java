@@ -16,7 +16,7 @@ public class ShellUtil {
     }
 
     public static CommandResult execCommand(String command, boolean isRoot) {
-        return execCommand(new String[] {command}, isRoot, true);
+        return execCommand(new String[]{command}, isRoot, true);
     }
 
     public static CommandResult execCommand(String command, boolean isRoot, boolean isNeedResultMsg) {
@@ -108,7 +108,7 @@ public class ShellUtil {
 
     public static class CommandResult {
 
-        public int    result;
+        public int result;
         public String responseMsg;
         public String errorMsg;
 
@@ -123,9 +123,9 @@ public class ShellUtil {
         }
     }
 
-    public static final String COMMAND_SU       = "su";
-    public static final String COMMAND_SH       = "sh";
-    public static final String COMMAND_EXIT     = "exit\n";
+    public static final String COMMAND_SU = "su";
+    public static final String COMMAND_SH = "sh";
+    public static final String COMMAND_EXIT = "exit\n";
     public static final String COMMAND_LINE_END = "\n";
 
 

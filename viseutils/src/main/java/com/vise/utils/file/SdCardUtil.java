@@ -18,11 +18,11 @@ import java.util.ArrayList;
 
 /**
  * Get SD card info.
- *
  */
 public class SdCardUtil {
     /**
      * is sd card available.
+     *
      * @return true if available
      */
     public boolean isSdCardAvailable() {
@@ -66,7 +66,7 @@ public class SdCardUtil {
             while ((lineStr = bufferedReader.readLine()) != null) {
                 ViseLog.i("proc/mounts:   " + lineStr);
                 if (lineStr.contains("sdcard")
-                    && lineStr.contains(".android_secure")) {
+                        && lineStr.contains(".android_secure")) {
                     String[] strArray = lineStr.split(" ");
                     if (strArray.length >= 5) {
                         sdcard = strArray[1].replace("/.android_secure", "");
@@ -199,15 +199,15 @@ public class SdCardUtil {
         @Override
         public String toString() {
             return "SDCardInfo{" +
-                   "isExist=" + isExist +
-                   ", totalBlocks=" + totalBlocks +
-                   ", freeBlocks=" + freeBlocks +
-                   ", availableBlocks=" + availableBlocks +
-                   ", blockByteSize=" + blockByteSize +
-                   ", totalBytes=" + totalBytes +
-                   ", freeBytes=" + freeBytes +
-                   ", availableBytes=" + availableBytes +
-                   '}';
+                    "isExist=" + isExist +
+                    ", totalBlocks=" + totalBlocks +
+                    ", freeBlocks=" + freeBlocks +
+                    ", availableBlocks=" + availableBlocks +
+                    ", blockByteSize=" + blockByteSize +
+                    ", totalBytes=" + totalBytes +
+                    ", freeBytes=" + freeBytes +
+                    ", availableBytes=" + availableBytes +
+                    '}';
         }
     }
 }

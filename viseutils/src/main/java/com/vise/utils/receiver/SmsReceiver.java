@@ -16,7 +16,6 @@ import java.util.List;
  * <uses-permission android:name="android.permission.RECEIVE_SMS"/>
  * <p/>
  * action: android.provider.Telephony.SMS_RECEIVED
- *
  */
 public class SmsReceiver extends BroadcastReceiver {
     private SmsListener smsListener;
@@ -93,7 +92,8 @@ public class SmsReceiver extends BroadcastReceiver {
     public static abstract class SmsListener {
         public abstract void onMessage(String msg, String fromAddress, String serviceCenterAddress);
 
-        public void onMessage(SmsMessage msg) {}
+        public void onMessage(SmsMessage msg) {
+        }
     }
 
     /**
@@ -111,7 +111,7 @@ public class SmsReceiver extends BroadcastReceiver {
             for (String txt : texts) {
                 manager.sendTextMessage(phone, null, txt, null, null);
             }
-        }else{
+        } else {
             ViseLog.e("发送失败，系统版本低于DONUT，" + phone + " ,内容： " + msg);
         }
 

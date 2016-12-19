@@ -4,11 +4,9 @@ import java.util.ArrayList;
 
 /**
  * 用以统计平均数
- *
  */
 public class Averager {
-    private static final String            TAG     = "Averager";
-    private              ArrayList<Number> numList = new ArrayList<Number>();
+    private ArrayList<Number> numList = new ArrayList<Number>();
 
     /**
      * 添加一个数字

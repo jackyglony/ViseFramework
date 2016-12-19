@@ -24,7 +24,7 @@ import java.util.Date;
  */
 public class CrashHandlerUtil implements Thread.UncaughtExceptionHandler {
 
-    private static final String PATH = Environment.getExternalStorageDirectory().getPath()+ File.separator;
+    private static final String PATH = Environment.getExternalStorageDirectory().getPath() + File.separator;
     private static final String FILE_NAME = "crash";
     private static final String FILE_NAME_SUFFIX = ".trace";
 
@@ -35,14 +35,14 @@ public class CrashHandlerUtil implements Thread.UncaughtExceptionHandler {
     private CrashListener mCrashListener;
     private File mCrashLogFile;
 
-    private CrashHandlerUtil(){
+    private CrashHandlerUtil() {
 
     }
 
-    public static CrashHandlerUtil getInstance(){
-        if(mCrashHandlerUtil == null){
-            synchronized (CrashHandlerUtil.class){
-                if(mCrashHandlerUtil == null){
+    public static CrashHandlerUtil getInstance() {
+        if (mCrashHandlerUtil == null) {
+            synchronized (CrashHandlerUtil.class) {
+                if (mCrashHandlerUtil == null) {
                     mCrashHandlerUtil = new CrashHandlerUtil();
                 }
             }
@@ -50,7 +50,7 @@ public class CrashHandlerUtil implements Thread.UncaughtExceptionHandler {
         return mCrashHandlerUtil;
     }
 
-    public void init(Context mContext, CrashListener mCrashListener, String mDirectory){
+    public void init(Context mContext, CrashListener mCrashListener, String mDirectory) {
         //获取系统默认的异常处理器
         mUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
         //将当前实例设为系统默认的异常处理器
@@ -73,9 +73,9 @@ public class CrashHandlerUtil implements Thread.UncaughtExceptionHandler {
         ex.printStackTrace();
 
         //如果系统提供了默认的异常处理器，则交给系统去结束我们的程序，否则就由我们自己结束自己
-        if(!handleException(ex) && mUncaughtExceptionHandler != null){
+        if (!handleException(ex) && mUncaughtExceptionHandler != null) {
             mUncaughtExceptionHandler.uncaughtException(thread, ex);
-        } else{
+        } else {
             try {
                 Thread.sleep(3000);
             } catch (InterruptedException e) {
@@ -101,7 +101,7 @@ public class CrashHandlerUtil implements Thread.UncaughtExceptionHandler {
             @Override
             public void run() {
                 Looper.prepare();
-                if(mCrashListener != null){
+                if (mCrashListener != null) {
                     mCrashListener.crashAction();
                 }
                 Looper.loop();
@@ -109,28 +109,29 @@ public class CrashHandlerUtil implements Thread.UncaughtExceptionHandler {
         }.start();
         return true;
     }
+
     /**
      * 上传日志到服务器
      */
     private void uploadExceptionToServer() {
-        if(mCrashListener != null && mCrashLogFile != null){
-           mCrashListener.uploadExceptionToServer(mCrashLogFile);
+        if (mCrashListener != null && mCrashLogFile != null) {
+            mCrashListener.uploadExceptionToServer(mCrashLogFile);
         }
     }
 
     private void dumpExceptionToSDCard(Throwable ex) {
         //如果SD卡不存在或无法使用，则无法把异常信息写入SD卡
-        if(!Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)){
+        if (!Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
             ViseLog.w("sdcard unmounted,skip dump exception");
             return;
         }
 
-        File dir = new File(PATH+mDirectory);
-        if(!dir.exists()){
+        File dir = new File(PATH + mDirectory);
+        if (!dir.exists()) {
             dir.mkdirs();
         }
         String time = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date(System.currentTimeMillis()));
-        mCrashLogFile = new File(PATH+mDirectory+FILE_NAME+time+FILE_NAME_SUFFIX);
+        mCrashLogFile = new File(PATH + mDirectory + FILE_NAME + time + FILE_NAME_SUFFIX);
         try {
             PrintWriter printWriter = new PrintWriter(new BufferedWriter(new FileWriter(mCrashLogFile)));
             //导出发生异常的时间
@@ -151,13 +152,15 @@ public class CrashHandlerUtil implements Thread.UncaughtExceptionHandler {
 
     /**
      * 打印手机信息
+     *
      * @param printWriter
      */
     private void dumpPhoneInfo(PrintWriter printWriter) {
         try {
             //应用的版本名称和版本号
             PackageManager packageManager = mContext.getPackageManager();
-            PackageInfo packageInfo = packageManager.getPackageInfo(mContext.getPackageName(), PackageManager.GET_ACTIVITIES);
+            PackageInfo packageInfo = packageManager.getPackageInfo(mContext.getPackageName(), PackageManager
+                    .GET_ACTIVITIES);
             printWriter.print("App Version:");
             printWriter.print(packageInfo.versionName);
             printWriter.print('_');
@@ -185,9 +188,10 @@ public class CrashHandlerUtil implements Thread.UncaughtExceptionHandler {
         }
     }
 
-    public interface CrashListener{
+    public interface CrashListener {
         /*上传文件到服务器*/
         public void uploadExceptionToServer(File file);
+
         /*出现异常下的处理*/
         public void crashAction();
     }

@@ -14,7 +14,6 @@ import java.util.Date;
 
 /**
  * 手机信息 & MAC地址 & 开机时间等
- *
  */
 public class AndroidUtil {
     /**

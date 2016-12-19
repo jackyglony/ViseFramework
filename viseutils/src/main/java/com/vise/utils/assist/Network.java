@@ -11,13 +11,10 @@ import java.lang.reflect.Method;
 
 /**
  * assist us in sensing state of the networks.
- *
+ * <p>
  * need  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
- *
  */
 public class Network {
-    private static final String TAG = Network.class.getSimpleName();
-
     public enum NetType {
         None(1),
         Mobile(2),
@@ -78,7 +75,9 @@ public class Network {
         NetworkInfo[] nets = getConnectivityManager(context).getAllNetworkInfo();
         if (nets != null) {
             for (NetworkInfo net : nets) {
-                if (net.isConnectedOrConnecting()) { return true; }
+                if (net.isConnectedOrConnecting()) {
+                    return true;
+                }
             }
         }
         return false;
@@ -137,7 +136,9 @@ public class Network {
         NetworkInfo[] nets = getConnectivityManager(context).getAllNetworkInfo();
         if (nets != null) {
             for (NetworkInfo net : nets) {
-                if (net.getType() == ConnectivityManager.TYPE_WIFI) { return net.isAvailable(); }
+                if (net.getType() == ConnectivityManager.TYPE_WIFI) {
+                    return net.isAvailable();
+                }
             }
         }
         return false;
@@ -157,7 +158,9 @@ public class Network {
         NetworkInfo[] nets = getConnectivityManager(context).getAllNetworkInfo();
         if (nets != null) {
             for (NetworkInfo net : nets) {
-                if (net.getType() == ConnectivityManager.TYPE_MOBILE) { return net.isAvailable(); }
+                if (net.getType() == ConnectivityManager.TYPE_MOBILE) {
+                    return net.isAvailable();
+                }
             }
         }
         return false;
@@ -210,7 +213,7 @@ public class Network {
 
     /**
      * get connected network type by {@link ConnectivityManager}
-     *
+     * <p>
      * such as WIFI, MOBILE, ETHERNET, BLUETOOTH, etc.
      *
      * @return {@link ConnectivityManager#TYPE_WIFI}, {@link ConnectivityManager#TYPE_MOBILE},
@@ -227,7 +230,7 @@ public class Network {
 
     /**
      * get network type by {@link TelephonyManager}
-     *
+     * <p>
      * such as 2G, 3G, 4G, etc.
      *
      * @return {@link TelephonyManager#NETWORK_TYPE_CDMA}, {@link TelephonyManager#NETWORK_TYPE_GPRS},

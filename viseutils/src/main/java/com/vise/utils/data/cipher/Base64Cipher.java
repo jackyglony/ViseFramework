@@ -15,13 +15,13 @@ public class Base64Cipher extends Cipher {
 
     @Override
     public byte[] decrypt(byte[] res) {
-        if(cipher != null) res = cipher.decrypt(res);
+        if (cipher != null) res = cipher.decrypt(res);
         return Base64.decode(res, Base64.DEFAULT);
     }
 
     @Override
     public byte[] encrypt(byte[] res) {
-        if(cipher != null) res = cipher.encrypt(res);
+        if (cipher != null) res = cipher.encrypt(res);
         return Base64.encode(res, Base64.DEFAULT);
     }
 }

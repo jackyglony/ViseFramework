@@ -9,7 +9,6 @@ import android.os.Handler;
  * Call requires API level 5
  * <uses-permission android:name="android.permission.FLASHLIGHT"/>
  * <uses-permission android:name="android.permission.CAMERA"/>
- *
  */
 public class FlashLight {
 

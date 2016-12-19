@@ -57,11 +57,14 @@ public class DialogUtil {
         return showTips(context, context.getString(title), context.getString(des));
     }
 
-    public static Dialog showTips(Context context, int title, int des, int btn, DialogInterface.OnDismissListener dismissListener) {
-        return showTips(context, context.getString(title), context.getString(des), context.getString(btn), dismissListener);
+    public static Dialog showTips(Context context, int title, int des, int btn, DialogInterface.OnDismissListener
+            dismissListener) {
+        return showTips(context, context.getString(title), context.getString(des), context.getString(btn),
+                dismissListener);
     }
 
-    public static Dialog showTips(Context context, String title, String des, String btn, DialogInterface.OnDismissListener dismissListener) {
+    public static Dialog showTips(Context context, String title, String des, String btn, DialogInterface
+            .OnDismissListener dismissListener) {
         AlertDialog.Builder builder = dialogBuilder(context, title, des);
         builder.setCancelable(true);
         builder.setPositiveButton(btn, null);

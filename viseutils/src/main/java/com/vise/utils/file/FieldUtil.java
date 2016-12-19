@@ -10,7 +10,6 @@ import java.util.List;
 
 /**
  * 域工具
- *
  */
 public class FieldUtil {
 
@@ -39,7 +38,8 @@ public class FieldUtil {
      * @throws IllegalAccessException
      * @throws IllegalArgumentException
      */
-    public static Object set(Field f, Object obj, Object value) throws IllegalArgumentException, IllegalAccessException {
+    public static Object set(Field f, Object obj, Object value) throws IllegalArgumentException,
+            IllegalAccessException {
         f.setAccessible(true);
         f.set(obj, value);
         return f.get(obj);

@@ -12,9 +12,8 @@ import java.util.Date;
 
 /**
  * Get phone info, such as IMEI,IMSI,Number,Sim State, etc.
- *
+ * <p>
  * <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
- *
  */
 public class TelephoneUtil {
 
@@ -114,19 +113,19 @@ public class TelephoneUtil {
         @Override
         public String toString() {
             return "TeleInfo{" +
-                   "imsi_1='" + imsi_1 + '\'' +
-                   ", imsi_2='" + imsi_2 + '\'' +
-                   ", imei_1='" + imei_1 + '\'' +
-                   ", imei_2='" + imei_2 + '\'' +
-                   ", phoneType_1=" + phoneType_1 +
-                   ", phoneType_2=" + phoneType_2 +
-                   '}';
+                    "imsi_1='" + imsi_1 + '\'' +
+                    ", imsi_2='" + imsi_2 + '\'' +
+                    ", imei_1='" + imei_1 + '\'' +
+                    ", imei_2='" + imei_2 + '\'' +
+                    ", phoneType_1=" + phoneType_1 +
+                    ", phoneType_2=" + phoneType_2 +
+                    '}';
         }
     }
 
     /**
      * MTK Phone.
-     *
+     * <p>
      * 获取 MTK 神机的双卡 IMSI、IMSI 信息
      */
     public static TeleInfo getMtkTeleInfo(Context context) {
@@ -170,7 +169,7 @@ public class TelephoneUtil {
 
     /**
      * MTK Phone.
-     *
+     * <p>
      * 获取 MTK 神机的双卡 IMSI、IMSI 信息
      */
     public static TeleInfo getMtkTeleInfo2(Context context) {
@@ -249,7 +248,7 @@ public class TelephoneUtil {
 
     /**
      * Spreadtrum Phone.
-     *
+     * <p>
      * 获取 展讯 神机的双卡 IMSI、IMSI 信息
      */
     public static TeleInfo getSpreadtrumTeleInfo(Context context) {

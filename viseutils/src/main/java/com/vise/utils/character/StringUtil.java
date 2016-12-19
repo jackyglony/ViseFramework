@@ -1,6 +1,7 @@
 package com.vise.utils.character;
 
 import android.content.Context;
+import android.os.Build;
 
 import org.json.JSONObject;
 
@@ -10,6 +11,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.net.URLEncoder;
+import java.nio.charset.Charset;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -25,7 +27,8 @@ import java.util.zip.GZIPOutputStream;
 public class StringUtil {
 
     public static final String PHONE_FORMAT = "^((17[0-9])|(13[0-9])|(15[0-3,5-9])|(18[0-9])|(145)|(147))\\d{8}$";
-    public static final String EMAIL_FORMAT = "^[0-9a-zA-Z][_.0-9a-zA-Z-]{0,43}@([0-9a-zA-Z][0-9a-zA-Z-]{0,30}[0-9a-zA-Z].){1,4}[a-zA-Z]{2,4}$";
+    public static final String EMAIL_FORMAT = "^[0-9a-zA-Z][_.0-9a-zA-Z-]{0,43}@([0-9a-zA-Z][0-9a-zA-Z-]{0," +
+            "30}[0-9a-zA-Z].){1,4}[a-zA-Z]{2,4}$";
     public static final String VERIFY_CODE_FORMAT = "^\\d{4}$";
     public static final String PASSWORD_LEGAL_CHARACTERS = "[a-zA-Z0-9]{6,20}";
 
@@ -850,18 +853,19 @@ public class StringUtil {
         if (hours == 0) {
             return (minutes < 10L ? "0" : "") + minutes + ":" + (secs < 10L ? "0" : "") + secs;
         }
-        return (hours < 10L ? "0" : "") + hours + ":" + (minutes < 10L ? "0" : "") + minutes + ":" + (secs < 10L ? "0" : "") + secs;
+        return (hours < 10L ? "0" : "") + hours + ":" + (minutes < 10L ? "0" : "") + minutes + ":" + (secs < 10L ?
+                "0" : "") + secs;
     }
 
     /**
      * 是否含有表情符
      * false 为含有表情符
      */
-    public static boolean checkFace(String checkString){
+    public static boolean checkFace(String checkString) {
         String reg = "^([a-z]|[A-Z]|[0-9]|[\u0000-\u00FF]|[\u2000-\uFFFF]){1,}$";
         Pattern pattern = Pattern.compile(reg);
         Matcher matcher = pattern.matcher(checkString.replaceAll(" ", ""));
-        if(!matcher.matches()){
+        if (!matcher.matches()) {
             return false;
         }
         return true;
@@ -983,7 +987,8 @@ public class StringUtil {
      * @return
      */
     public static boolean isEmail(String email) {
-        String str = "^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$";
+        String str = "^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))" +
+                "([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$";
         Pattern p = Pattern.compile(str);
         Matcher m = p.matcher(email);
         return m.matches();
@@ -1116,13 +1121,26 @@ public class StringUtil {
         return StringUtil.sub(strSource, iSubLen, "...");
     }
 
-    public static String object2Str(Object obj){
+    public static String object2Str(Object obj) {
         String result = null;
-        if(obj != null){
-            result = (String )obj;
+        if (obj != null) {
+            result = (String) obj;
         }
 
         return result;
+    }
+
+    public static byte[] getBytes(String src, Charset charSet) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.GINGERBREAD) {
+            try {
+                return src.getBytes(charSet.name());
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+            return null;
+        } else {
+            return src.getBytes(charSet);
+        }
     }
 
 }

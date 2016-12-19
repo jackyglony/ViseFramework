@@ -20,23 +20,24 @@ import com.vise.log.ViseLog;
  * <p/>
  * manifest:
  * <service android:name=".service.NotificationService"
- *  android:label="@string/app_name"
- *  android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
- *  <intent-filter>
- *      <action android:name="android.service.notification.NotificationListenerService" />
- *  </intent-filter>
+ * android:label="@string/app_name"
+ * android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+ * <intent-filter>
+ * <action android:name="android.service.notification.NotificationListenerService" />
+ * </intent-filter>
  * </service>
- *
  */
 @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
 public class NotificationService extends NotificationListenerService {
-    public static final String ACTION_NOTIFICATION_LISTENER_SETTINGS = "android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS";
+    public static final String ACTION_NOTIFICATION_LISTENER_SETTINGS = "android.settings" +
+            ".ACTION_NOTIFICATION_LISTENER_SETTINGS";
     private static final String ENABLED_NOTIFICATION_LISTENERS = "enabled_notification_listeners";
     private static NotificationService self;
     private static NotificationListener notificationListener;
 
     /*----------------- 静态方法 -----------------*/
-    public synchronized static void startNotificationService(Context context, NotificationListener notificationListener) {
+    public synchronized static void startNotificationService(Context context, NotificationListener
+            notificationListener) {
         NotificationService.notificationListener = notificationListener;
         context.startService(new Intent(context, NotificationService.class));
     }
@@ -48,7 +49,7 @@ public class NotificationService extends NotificationListenerService {
 
     public static void startNotificationListenSettings(Context context) {
         Intent intent = new Intent(ACTION_NOTIFICATION_LISTENER_SETTINGS);
-        if(!(context instanceof Activity)) {
+        if (!(context instanceof Activity)) {
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         }
         context.startActivity(intent);
@@ -90,7 +91,8 @@ public class NotificationService extends NotificationListenerService {
     public int onStartCommand(Intent intent, int flags, int startId) {
         ViseLog.i("onStartCommand..");
 
-        return notificationListener == null ? START_STICKY : notificationListener.onServiceStartCommand(this, intent, flags, startId);
+        return notificationListener == null ? START_STICKY : notificationListener.onServiceStartCommand(this, intent,
+                flags, startId);
     }
 
     @Override
@@ -133,17 +135,19 @@ public class NotificationService extends NotificationListenerService {
     public void printCurrentNotifications() {
         StatusBarNotification[] ns = getActiveNotifications();
         for (StatusBarNotification n : ns) {
-            ViseLog.i(String.format("%20s",n.getPackageName()) + ": " + n.getNotification().tickerText);
+            ViseLog.i(String.format("%20s", n.getPackageName()) + ": " + n.getNotification().tickerText);
         }
     }
 
 
     public static abstract class NotificationListener {
-        public void onServiceCreated(NotificationService service) {}
+        public void onServiceCreated(NotificationService service) {
+        }
 
         public abstract int onServiceStartCommand(NotificationService service, Intent intent, int flags, int startId);
 
-        public void onServiceDestroy() {}
+        public void onServiceDestroy() {
+        }
 
         /**
          * Implement this method to learn about new notifications as they are posted by apps.

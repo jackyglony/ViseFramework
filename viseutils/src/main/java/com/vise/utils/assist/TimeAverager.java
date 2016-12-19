@@ -3,7 +3,6 @@ package com.vise.utils.assist;
 
 /**
  * 时间均值计算器,只能用于单线程计时。
- *
  */
 public class TimeAverager {
     /**

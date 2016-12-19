@@ -23,7 +23,7 @@ public class AppUtil {
     /**
      * 调用系统分享
      */
-    public static void shareToOtherApp(Context context,String title,String content, String dialogTitle ) {
+    public static void shareToOtherApp(Context context, String title, String content, String dialogTitle) {
         Intent intentItem = new Intent(Intent.ACTION_SEND);
         intentItem.setType("text/plain");
         intentItem.putExtra(Intent.EXTRA_SUBJECT, title);
@@ -50,6 +50,7 @@ public class AppUtil {
 
     /**
      * 获取App包 信息版本号
+     *
      * @param context
      * @return
      */
@@ -121,6 +122,7 @@ public class AppUtil {
 
     /**
      * 获取进程名字
+     *
      * @param cxt
      * @param pid
      * @return
@@ -167,7 +169,7 @@ public class AppUtil {
         userAgent.append(SEMICOLON);
         userAgent.append(AppUtil.getModelName()); // 设备
         userAgent.append(SEMICOLON);
-        userAgent.append(ViewUtil.getScreenWidth(context)+"*"+ViewUtil.getScreenHeight(context)); // 分辨率
+        userAgent.append(ViewUtil.getScreenWidth(context) + "*" + ViewUtil.getScreenHeight(context)); // 分辨率
         userAgent.append(SEMICOLON);
         userAgent.append(AppUtil.getImei(context)); // IMEI
         userAgent.append(SEMICOLON);

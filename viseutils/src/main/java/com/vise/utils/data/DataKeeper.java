@@ -13,9 +13,9 @@ import com.vise.utils.encrypt.HexUtil;
  */
 public class DataKeeper {
     private SharedPreferences sp;
-    public static final  String KEY_PK_HOME = "msg_pk_home";
-    public static final  String KEY_PK_NEW  = "msg_pk_new";
-    private static final String TAG         = DataKeeper.class.getSimpleName();
+    public static final String KEY_PK_HOME = "msg_pk_home";
+    public static final String KEY_PK_NEW = "msg_pk_new";
+    private static final String TAG = DataKeeper.class.getSimpleName();
 
     public DataKeeper(Context context, String fileName) {
         sp = context.getSharedPreferences(fileName, Context.MODE_PRIVATE);

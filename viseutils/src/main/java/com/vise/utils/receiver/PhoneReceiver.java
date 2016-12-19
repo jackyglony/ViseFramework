@@ -22,7 +22,6 @@ import com.vise.log.ViseLog;
  * 未接：phone_state=RINGING
  * 已接：phone_state=OFFHOOK;
  * 挂断：phone_state=IDLE
- *
  */
 public class PhoneReceiver extends BroadcastReceiver {
 

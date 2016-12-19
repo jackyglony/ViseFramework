@@ -5,7 +5,7 @@ import android.widget.Toast;
 
 public class Toastor {
 
-    private Toast   mToast;
+    private Toast mToast;
     private Context context;
 
     public Toastor(Context context) {
@@ -15,7 +15,7 @@ public class Toastor {
     public Toast getSingletonToast(int resId) {
         if (mToast == null) {
             mToast = Toast.makeText(context, resId, Toast.LENGTH_SHORT);
-        }else{
+        } else {
             mToast.setText(resId);
         }
         return mToast;
@@ -24,7 +24,7 @@ public class Toastor {
     public Toast getSingletonToast(String text) {
         if (mToast == null) {
             mToast = Toast.makeText(context, text, Toast.LENGTH_SHORT);
-        }else{
+        } else {
             mToast.setText(text);
         }
         return mToast;
@@ -33,7 +33,7 @@ public class Toastor {
     public Toast getSingleLongToast(int resId) {
         if (mToast == null) {
             mToast = Toast.makeText(context, resId, Toast.LENGTH_LONG);
-        }else{
+        } else {
             mToast.setText(resId);
         }
         return mToast;
@@ -42,7 +42,7 @@ public class Toastor {
     public Toast getSingleLongToast(String text) {
         if (mToast == null) {
             mToast = Toast.makeText(context, text, Toast.LENGTH_LONG);
-        }else{
+        } else {
             mToast.setText(text);
         }
         return mToast;

@@ -14,7 +14,6 @@ import java.util.regex.Pattern;
 
 /**
  * Get CPU info.
- *
  */
 public class CpuUtil {
     private static final String TAG = CpuUtil.class.getSimpleName();

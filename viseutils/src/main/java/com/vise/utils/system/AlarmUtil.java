@@ -14,7 +14,7 @@ public class AlarmUtil {
     @TargetApi(Build.VERSION_CODES.CUPCAKE)
     public static void startAlarmIntent(Context context, int triggerAtMillis, PendingIntent pendingIntent) {
         AlarmManager manager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
-        manager.set(AlarmManager.RTC_WAKEUP,triggerAtMillis, pendingIntent);
+        manager.set(AlarmManager.RTC_WAKEUP, triggerAtMillis, pendingIntent);
     }
 
     /**
@@ -34,7 +34,7 @@ public class AlarmUtil {
         Intent intent = new Intent(context, cls);
         intent.setAction(action);
         PendingIntent pendingIntent = PendingIntent.getService(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-        startAlarmIntent(context, triggerAtMillis,pendingIntent);
+        startAlarmIntent(context, triggerAtMillis, pendingIntent);
     }
 
     /**

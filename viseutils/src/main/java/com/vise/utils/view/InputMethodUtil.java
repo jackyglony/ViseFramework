@@ -11,7 +11,7 @@ import android.view.inputmethod.InputMethodManager;
  * 软键盘
  */
 @TargetApi(Build.VERSION_CODES.CUPCAKE)
-public class InputMethodUtils {
+public class InputMethodUtil {
 
     public static void toggleSoftInput(Context context) {
         InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);

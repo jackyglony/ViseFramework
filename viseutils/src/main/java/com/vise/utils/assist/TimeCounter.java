@@ -4,11 +4,9 @@ import com.vise.log.ViseLog;
 
 /**
  * Time Counter.
- *
  */
 public class TimeCounter {
 
-    private static final String TAG = TimeCounter.class.getSimpleName();
     private long t;
 
     public TimeCounter() {

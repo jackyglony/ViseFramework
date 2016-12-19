@@ -6,7 +6,7 @@ public class NumberUtil {
         try {
             return Integer.parseInt(intStr);
         } catch (NumberFormatException e) {
-            //e.printStackTrace();
+            e.printStackTrace();
         }
         return defValue;
     }
@@ -15,7 +15,7 @@ public class NumberUtil {
         try {
             return Long.parseLong(longStr);
         } catch (NumberFormatException e) {
-            //e.printStackTrace();
+            e.printStackTrace();
         }
         return defValue;
     }
@@ -24,7 +24,7 @@ public class NumberUtil {
         try {
             return Float.parseFloat(fStr);
         } catch (NumberFormatException e) {
-            //e.printStackTrace();
+            e.printStackTrace();
         }
         return defValue;
     }
@@ -33,7 +33,7 @@ public class NumberUtil {
         try {
             return Double.parseDouble(dStr);
         } catch (NumberFormatException e) {
-            //e.printStackTrace();
+            e.printStackTrace();
         }
         return defValue;
     }
@@ -43,7 +43,7 @@ public class NumberUtil {
         try {
             return Integer.valueOf(intStr);
         } catch (NumberFormatException e) {
-            //e.printStackTrace();
+            e.printStackTrace();
         }
         return null;
     }
@@ -52,7 +52,7 @@ public class NumberUtil {
         try {
             return Long.valueOf(longStr);
         } catch (NumberFormatException e) {
-            //e.printStackTrace();
+            e.printStackTrace();
         }
         return null;
     }
@@ -61,7 +61,7 @@ public class NumberUtil {
         try {
             return Float.valueOf(fStr);
         } catch (NumberFormatException e) {
-            //e.printStackTrace();
+            e.printStackTrace();
         }
         return null;
     }
@@ -70,7 +70,7 @@ public class NumberUtil {
         try {
             return Double.valueOf(dStr);
         } catch (NumberFormatException e) {
-            //e.printStackTrace();
+            e.printStackTrace();
         }
         return null;
     }

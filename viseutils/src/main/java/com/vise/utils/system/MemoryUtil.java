@@ -11,14 +11,13 @@ import com.vise.utils.file.FileUtil;
 
 /**
  * Get memory info.
- *
  */
 public class MemoryUtil {
     private static final String MEM_INFO_PATH = "/proc/meminfo";
 
     /**
      * Print memory info. such as:
-     *
+     * <p>
      * MemTotal:        1864292 kB
      * MemFree:          779064 kB
      * Buffers:            4540 kB

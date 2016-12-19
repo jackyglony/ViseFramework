@@ -10,7 +10,6 @@ import com.vise.log.ViseLog;
 
 /**
  * 时间广播
- *
  */
 public class TimeReceiver extends BroadcastReceiver {
 
@@ -18,12 +17,12 @@ public class TimeReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-            ViseLog.i("action: " + intent.getAction());
-            ViseLog.d("intent : ");
-            Bundle bundle = intent.getExtras();
-            for (String key : bundle.keySet()) {
-                ViseLog.d(key + " : " + bundle.get(key));
-            }
+        ViseLog.i("action: " + intent.getAction());
+        ViseLog.d("intent : ");
+        Bundle bundle = intent.getExtras();
+        for (String key : bundle.keySet()) {
+            ViseLog.d(key + " : " + bundle.get(key));
+        }
         if (Intent.ACTION_TIME_TICK.equals(intent.getAction())) {
             if (timeListener != null) {
                 timeListener.onTimeTick();

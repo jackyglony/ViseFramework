@@ -7,10 +7,10 @@ import java.util.Random;
  */
 public class RandomUtil {
     public static final String NUMBERS_AND_LETTERS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    public static final String NUMBERS             = "0123456789";
-    public static final String LETTERS             = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    public static final String CAPITAL_LETTERS     = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    public static final String LOWER_CASE_LETTERS  = "abcdefghijklmnopqrstuvwxyz";
+    public static final String NUMBERS = "0123456789";
+    public static final String LETTERS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    public static final String CAPITAL_LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    public static final String LOWER_CASE_LETTERS = "abcdefghijklmnopqrstuvwxyz";
 
     private RandomUtil() {
         throw new AssertionError();

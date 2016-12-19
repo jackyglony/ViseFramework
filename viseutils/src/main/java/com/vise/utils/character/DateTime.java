@@ -526,7 +526,7 @@ public class DateTime {
     }
 
     public static int getYear() {
-        Time t=new Time(); // or Time t=new Time("GMT+8"); 加上Time Zone资料
+        Time t = new Time(); // or Time t=new Time("GMT+8"); 加上Time Zone资料
         t.setToNow(); // 取得系统时间。
         int year = t.year;
         return year;
@@ -541,9 +541,9 @@ public class DateTime {
         int month = c.get(Calendar.MONTH);
         int day = c.get(Calendar.DAY_OF_MONTH);
         int month2 = month + 1;
-        if (month2<10) {
-            return "0" +month2 + "/" + day;
-        }else {
+        if (month2 < 10) {
+            return "0" + month2 + "/" + day;
+        } else {
             return month2 + "/" + day;
         }
     }

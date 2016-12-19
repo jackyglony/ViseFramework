@@ -89,7 +89,7 @@ public class StringBuilderWriter extends Writer implements Serializable {
      *
      * @param value The character to append
      * @param start The index of the first character
-     * @param end The index of the last character + 1
+     * @param end   The index of the last character + 1
      * @return This writer instance
      */
     @Override
@@ -99,14 +99,14 @@ public class StringBuilderWriter extends Writer implements Serializable {
     }
 
     /**
-     * Closing this writer has no effect. 
+     * Closing this writer has no effect.
      */
     @Override
     public void close() {
     }
 
     /**
-     * Flushing this writer has no effect. 
+     * Flushing this writer has no effect.
      */
     @Override
     public void flush() {
@@ -115,7 +115,7 @@ public class StringBuilderWriter extends Writer implements Serializable {
 
     /**
      * Write a String to the {@link StringBuilder}.
-     * 
+     *
      * @param value The value to write
      */
     @Override
@@ -128,7 +128,7 @@ public class StringBuilderWriter extends Writer implements Serializable {
     /**
      * Write a portion of a character array to the {@link StringBuilder}.
      *
-     * @param value The value to write
+     * @param value  The value to write
      * @param offset The index of the first character
      * @param length The number of characters to write
      */

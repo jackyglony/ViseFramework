@@ -3,8 +3,8 @@ package com.vise.utils.assist;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
-import android.util.Log;
 
+import com.vise.log.ViseLog;
 import com.vise.utils.character.ShellUtil;
 
 import java.io.File;
@@ -14,7 +14,7 @@ public class SilentInstaller {
      * Installation return code<br/>
      * install success.
      */
-    public static final int INSTALL_SUCCEEDED             = 1;
+    public static final int INSTALL_SUCCEEDED = 1;
     /**
      * Installation return code<br/>
      * the package is already installed.
@@ -233,7 +233,7 @@ public class SilentInstaller {
      * Installation return code<br/>
      * other reason
      */
-    public static final int INSTALL_FAILED_OTHER          = -1000000;
+    public static final int INSTALL_FAILED_OTHER = -1000000;
 
     /**
      * Uninstall return code<br/>
@@ -270,7 +270,7 @@ public class SilentInstaller {
     /**
      * App installation location flags of android system
      */
-    public static final int APP_INSTALL_AUTO     = 0;
+    public static final int APP_INSTALL_AUTO = 0;
     public static final int APP_INSTALL_INTERNAL = 1;
     public static final int APP_INSTALL_EXTERNAL = 2;
 
@@ -315,12 +315,13 @@ public class SilentInstaller {
          **/
         StringBuilder command = new StringBuilder().append("LD_LIBRARY_PATH=/vendor/lib:/system/lib pm uninstall")
                 .append(isKeepData ? " -k " : " ").append(packageName.replace(" ", "\\ "));
-        ShellUtil.CommandResult commandResult = ShellUtil.execCommand(command.toString(), !isSystemApplication(context), true);
+        ShellUtil.CommandResult commandResult = ShellUtil.execCommand(command.toString(), !isSystemApplication
+                (context), true);
         if (commandResult.responseMsg != null
                 && (commandResult.responseMsg.contains("Success") || commandResult.responseMsg.contains("success"))) {
             return DELETE_SUCCEEDED;
         }
-        Log.e(TAG,
+        ViseLog.e(TAG,
                 new StringBuilder().append("uninstallSilent successMsg:").append(commandResult.responseMsg)
                         .append(", ErrorMsg:").append(commandResult.errorMsg).toString());
         if (commandResult.errorMsg == null) {
@@ -382,9 +383,8 @@ public class SilentInstaller {
             return INSTALL_SUCCEEDED;
         }
 
-        Log.e(TAG,
-                new StringBuilder().append("installSilent successMsg:").append(commandResult.responseMsg)
-                        .append(", ErrorMsg:").append(commandResult.errorMsg).toString());
+        ViseLog.e(TAG, new StringBuilder().append("installSilent successMsg:").append(commandResult.responseMsg)
+                .append(", ErrorMsg:").append(commandResult.errorMsg).toString());
         if (commandResult.errorMsg == null) {
             return INSTALL_FAILED_OTHER;
         }

@@ -189,60 +189,66 @@ public class ViewUtil {
 
     /**
      * 获取屏幕宽度像素
+     *
      * @param context
      * @return
      */
-    public static int getScreenWidth(Context context){
+    public static int getScreenWidth(Context context) {
         DisplayMetrics dm = DisplayUtil.getDisplayMetrics(context);
         return dm.widthPixels;
     }
 
     /**
      * 获取屏幕高度像素
+     *
      * @param context
      * @return
      */
-    public static int getScreenHeight(Context context){
+    public static int getScreenHeight(Context context) {
         DisplayMetrics dm = DisplayUtil.getDisplayMetrics(context);
         return dm.heightPixels;
     }
 
     /**
      * 获取屏幕宽度DPI
+     *
      * @param context
      * @return
      */
-    public static float getScreenWidthDpi(Context context){
+    public static float getScreenWidthDpi(Context context) {
         DisplayMetrics dm = DisplayUtil.getDisplayMetrics(context);
         return dm.xdpi;
     }
 
     /**
      * 获取屏幕高度DPI
+     *
      * @param context
      * @return
      */
-    public static float getScreenHeightDpi(Context context){
+    public static float getScreenHeightDpi(Context context) {
         DisplayMetrics dm = DisplayUtil.getDisplayMetrics(context);
         return dm.ydpi;
     }
 
     /**
      * 获取屏幕密度（像素比例：0.75/1.0/1.5/2.0）
+     *
      * @param context
      * @return
      */
-    public static float getScreenDensity(Context context){
+    public static float getScreenDensity(Context context) {
         DisplayMetrics dm = DisplayUtil.getDisplayMetrics(context);
         return dm.density;
     }
 
     /**
      * 获取屏幕密度（每寸像素：120/160/240/320）
+     *
      * @param context
      * @return
      */
-    public static int getScreenDensityDpi(Context context){
+    public static int getScreenDensityDpi(Context context) {
         DisplayMetrics dm = DisplayUtil.getDisplayMetrics(context);
         return dm.densityDpi;
     }
@@ -344,7 +350,7 @@ public class ViewUtil {
         //为了兼容尺寸小密度大的情况
         if (mDisplayMetrics.scaledDensity > 2) {
             //缩小到密度分之一
-            value = value*(1.1f - 1.0f/mDisplayMetrics.scaledDensity);
+            value = value * (1.1f - 1.0f / mDisplayMetrics.scaledDensity);
         }
         return scale(mDisplayMetrics.widthPixels,
                 mDisplayMetrics.heightPixels, value);
@@ -492,7 +498,8 @@ public class ViewUtil {
             setViewSize(view, width, height);
 
             // Padding
-            setPadding(view, view.getPaddingLeft(), view.getPaddingTop(), view.getPaddingRight(), view.getPaddingBottom());
+            setPadding(view, view.getPaddingLeft(), view.getPaddingTop(), view.getPaddingRight(), view
+                    .getPaddingBottom());
         }
 
         // Margin
@@ -500,7 +507,8 @@ public class ViewUtil {
             MarginLayoutParams mMarginLayoutParams = (MarginLayoutParams) view
                     .getLayoutParams();
             if (mMarginLayoutParams != null) {
-                setMargin(view, mMarginLayoutParams.leftMargin, mMarginLayoutParams.topMargin, mMarginLayoutParams.rightMargin, mMarginLayoutParams.bottomMargin);
+                setMargin(view, mMarginLayoutParams.leftMargin, mMarginLayoutParams.topMargin, mMarginLayoutParams
+                        .rightMargin, mMarginLayoutParams.bottomMargin);
             }
         }
 
